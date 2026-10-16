@@ -4,28 +4,87 @@
 
 console.table(daftarItem);
 
-// ─────────────────────────────────────────────
-// FUNGSI 1 — hitungTersedia(daftar)
-// Berapa banyak item yang properti true/false-nya bernilai true?
-// ─────────────────────────────────────────────
-// LANGKAH 1 — PAHAMI
-// LANGKAH 2 — CONTOH (termasuk kasus tepi)
-// LANGKAH 3 — LANGKAH (pseudocode)
-// LANGKAH 4 — TERJEMAHKAN
+//sedia
+function ketersediaan(daftar) {
+    let keperluan = 0;
+    let ketidakperluan = 0;
+
+    for (const item of daftar) {
+        if (item.diperlukan === true) {
+            keperluan++;
+        } else if (item.diperlukan === false) {
+            ketidakperluan++;
+        }
+    }
+
+    return { keperluan, ketidakperluan };
+}
 
 
-// ─────────────────────────────────────────────
-// FUNGSI 2 — cariBerdasarkanId(daftar, id)
-// Kembalikan item yang id-nya cocok. Kalau tidak ada, kembalikan null.
-// ─────────────────────────────────────────────
+const hasil = ketersediaan(daftarItem);
+
+console.log("Diperlukan:", hasil.keperluan);       // Output: 4
+console.log("Tidak diperlukan:", hasil.ketidakperluan); // Output: 2
 
 
+//cari
+
+function cari (daftar, id){
+    for(const item of daftar){
+        if( item.id === id){
+            return item;
+        }
+    }
+    return null;
+}
+
+
+const hasilCari = cari(daftarItem, 7);
+console.log(hasilCari);
+
+
+//saring
+function saringkategori(daftar,kasus){
+    const saring=[]
+    for(const item of daftar){
+        if (item.kasus.trim() === kasus) {
+        saring.push(item);
+        }
+    }
+    return saring;
+}
+const barangEkspor = saringkategori(daftarItem, "Ekspor");
+console.log("Barang Ekspor:", barangEkspor);
+
+const barangimpor = saringkategori(daftarItem, "Impor");
+console.log("Barang impor:", barangimpor)
 // ─────────────────────────────────────────────
 // FUNGSI 3 — saringKategori(daftar, kategori)
 // Kembalikan ARRAY BARU berisi item dengan kategori itu. Kalau tidak ada, array kosong [].
 // ─────────────────────────────────────────────
 
+function rataRataTersedia(daftar) {
+    let totalHarga = 0;
+    let jumlahItem = 0;
 
+    for (const item of daftar) {
+        if (item.diperlukan === true) {
+            totalHarga += item.harga; 
+            jumlahItem++;             
+        }
+    }
+
+
+    if (jumlahItem === 0) {
+        return null; 
+    }
+
+    return totalHarga / jumlahItem; 
+}
+
+
+const hasilRataRata = rataRataTersedia(daftarItem);
+console.log("Rata-rata harga barang yang diperlukan:", hasilRataRata);
 // ─────────────────────────────────────────────
 // FUNGSI 4 — rataRataTersedia(daftar)
 // Rata-rata properti angka, HANYA dari item yang bernilai true.
