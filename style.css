@@ -1,0 +1,161 @@
+/* Reset margin dan padding agar tampilan lebih konsisten
+   pada berbagai browser dan lebih mudah diatur dari awal. */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Warna latar dibuat netral agar fokus pengguna tetap
+   tertuju pada kartu produk ekspor dan impor. */
+body{
+    background-color: #f4f4f4;
+}
+
+/* Warna biru dipilih untuk memberi kesan profesional
+   dan identik dengan dunia perdagangan serta bisnis. */
+h1{
+    text-align: center;
+    padding: 20px;
+    color: white;
+    background-color: #1e3a8a;
+}
+
+/* Flexbox dipilih karena memudahkan penyusunan menu
+   secara horizontal dan tetap rapi saat layar berubah ukuran. */
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #2563eb;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 15px;
+}
+
+.navbar a:hover{
+    color: #facc15;
+}
+
+/* Judul section dibuat membentang penuh agar tetap terlihat
+   sebagai judul kelompok meskipun menggunakan CSS Grid. */
+section h2{
+    grid-column: 1 / -1;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+}
+
+/* Grid dipilih karena lebih cocok untuk menampilkan
+   banyak kartu produk dibandingkan Flexbox. */
+#ekspor,
+#impor{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px;
+}
+
+/* Kartu memakai bayangan dan sudut melengkung agar
+   tampilan lebih modern serta mudah dibedakan dari latar. */
+article{
+    width: 100%;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    padding: 15px;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    transition: 0.3s;
+}
+
+/* Efek hover diberikan sebagai umpan balik visual
+   agar pengguna mengetahui kartu dapat berinteraksi. */
+article:hover{
+    transform: translateY(-5px);
+}
+
+/* Seluruh gambar disamakan ukurannya supaya setiap kartu
+   memiliki tampilan yang seragam dan lebih profesional. */
+article img{
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+article h3{
+    color: #333;
+}
+
+article p{
+    color: #666;
+    font-size: 14px;
+}
+
+/* Tombol dibuat penuh mengikuti lebar kartu supaya
+   lebih mudah ditekan pada perangkat layar sentuh. */
+button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: #16a34a;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover{
+    background-color: #15803d;
+}
+
+/* Warna merah digunakan pada bagian impor agar pengguna
+   dapat membedakan aksi impor dan ekspor secara cepat. */
+#impor button{
+    background-color: #dc2626;
+}
+
+#impor button:hover{
+    background-color: #b91c1c;
+}
+
+/* Footer digunakan sebagai penutup halaman sehingga
+   tampilannya disamakan dengan header untuk konsistensi. */
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: #1e3a8a;
+    color: white;
+    margin-top: 30px;
+}
+
+/* Pendekatan mobile-first dipilih karena mayoritas pengguna
+   saat ini mengakses website melalui smartphone. */
+@media (min-width: 768px){
+    #ekspor,
+    #impor{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Tiga kolom digunakan pada layar besar agar ruang kosong
+   dapat dimanfaatkan dan lebih banyak produk terlihat sekaligus. */
+@media (min-width: 1024px){
+    #ekspor,
+    #impor{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
