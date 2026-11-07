@@ -101,7 +101,7 @@ article h3{
 
 article p{
     color: #666;
-    font-size: 14px;
+    font-size: 15px;
 }
 
 /* Tombol dibuat penuh mengikuti lebar kartu supaya
@@ -158,4 +158,14 @@ footer{
     #impor{
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+h5 {
+    font-size: 10px;
+}
+p {
+    font-size: 15px;
+}
+a{
+    font-size: 10PX;
 }
