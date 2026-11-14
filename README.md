@@ -1,73 +1,12 @@
-# Proyek Frontend — Metro Institute Season 2
+RADITYA WENGKI MAULANA 
+Katalog Ekspor Impor Barang
+ katalog ini adalah sebuah web yang berfungsi untuk menampilkan daftar produk, komoditas, atau data perdagangan internasional (barang keluar dan masuk antarnegara).
 
-Repositori ini adalah **produk kamu sendiri** yang akan terus dikembangkan selama kelas Frontend:
-dari data dan logika, menjadi halaman web, aplikasi React, sampai online di internet.
-
----
-
-## Mulai di sini (sekali saja)
-
-1. Klik tombol hijau **Use this template** → **Create a new repository**.
-2. Beri nama repositori, misalnya `frontend-namakamu`, lalu klik **Create repository**.
-3. Di repositori barumu: **Settings → Collaborators → Add people** → tambahkan **`samythh`** (mentor).
-4. Ambil repositori ke laptop:
-
-```bash
-git config --global user.name "Nama Lengkap"
-git config --global user.email "email-github@contoh.com"
-
-git clone https://github.com/<username-kamu>/<nama-repo>.git
-cd <nama-repo>
-```
-
-> Pastikan yang di-clone adalah **repositori milikmu**, bukan repositori template ini.
-
----
-
-## Cara mengerjakan & mengumpulkan tugas
-
-Setiap tugas dikerjakan di **branch** tersendiri dan dikumpulkan lewat **Pull Request**.
-
-```bash
-# 1. Buat branch untuk tugas
-git checkout -b tugas1a-namakamu
-
-# 2. Kerjakan tugasnya, lalu simpan & kirim
-git add .
-git commit -m "feat: data tema dan fungsi logika"
-git push -u origin tugas1a-namakamu
-```
-
-3. Buka repositorimu di GitHub → klik **Compare & pull request** → judul `Tugas 1A — Nama Kamu` → **Create pull request**.
-
-Kesulitan memakai terminal? Gunakan **GitHub Desktop** sebagai alternatif.
-
----
-
-## Isi repositori
-
-| File | Kegunaan |
-|---|---|
-| `index.html` | Penghubung file JavaScript ke browser. Buka file ini, lalu tekan **F12 → Console** |
-| `data.js` | Data tema produkmu (Tugas 1A) |
-| `logika.js` | Fungsi-fungsi logika (Tugas 1A) |
-| `docs/tugas-1a.md` | Soal dan kriteria penilaian Tugas 1A |
-
----
-
-## Aturan main
-
-- **Kode tugas ditulis sendiri.** Boleh bertanya ke mentor, teman, atau referensi lain untuk memahami konsep.
-- **Siap menjelaskan setiap baris kode.** Mentor akan menanyakan alasan di balik kodemu secara acak.
-- **Langkah dulu, kode belakangan.** Tulis langkah penyelesaian sebagai komentar sebelum menulis kode.
-
-## Kalau macet
-
-Tanyakan di grup dengan format:
-
-```
-1. Yang saya coba   : ...
-2. Yang saya harap  : ...
-3. Yang terjadi     : ... (+ screenshot error)
-4. Yang sudah dicoba: ...
-```
+ cara menjalankan npm instal dan npm run dev
+ 1. bukak cmd/terminal di laptop 
+ 2. masuk ke salah folder untuk penginstalan 
+ 3. kita cek dulu apakah ada note js di laptop dengan mengetik "node -v" jika keluar angka versi maka itu berhasil
+ 4. lakukan pembikinan react folder dengan mengetik "npm create vite@latest . -- --template react"
+ 5. setelah teristal megikuti langkah langkah di modul selanjutnya instal tailwind "npm install tailwindcss @tailwindcss/vite"
+ 6. setelah smua siap maka pergi ke cmd/terminal yg sudah berada didalam folder yang diinstal kerik "npm run dev"untuk memulai react
+ 7. jika ingin menghentikannya berikan perintah 'ctrl+c' dan ketik "y" 
