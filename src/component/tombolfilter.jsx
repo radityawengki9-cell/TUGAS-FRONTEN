@@ -1,18 +1,13 @@
-function TombolFilter({ teks, onPilih, aktif }) {
+function TombolFilter({ teks, aktif, onPilih }) {
   return (
-    <button onClick={onPilih}
-   // warna tombol mengikuti state kategori agar tombol aktif selalu sesuai filter yang dipilih
-    style={{
-            backgroundColor: aktif ? "#2563eb" : "#9ca3af",
-        color: "white",
-        padding: "10px",
-        margin: "5px",
-        border: "none",
-        borderRadius: "8px",
-        cursor: "pointer",
-        }}>
-            
-        
+    <button
+      onClick={onPilih}
+      className={`px-4 py-2 rounded-lg border transition ${
+        aktif
+          ? "bg-green-700 text-white border-green-700"
+          : "bg-white text-gray-700 border-gray-300"
+      }`}
+    >
       {teks}
     </button>
   );
