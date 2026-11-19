@@ -11,7 +11,7 @@ function Kartu({ item }) {
     <article className="flex flex-col gap-1 p-5 bg-white border border-gray-200 rounded-lg">
     <h3 className="text-lg font-semibold">{item.nama}</h3>
       <p className="text-sm text-gray-500">{item.kasus}</p>
-      <p className="mt-2 font-bold text-green-800">Rp{item.harga.toLocaleString("id-ID")}</p>
+      <p className="mt-2 font-bold text-green-800">Rp{item.harga.toLocaleString("id-ID")} /ton</p>
       {label}
     </article>
   );
