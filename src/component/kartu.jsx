@@ -1,4 +1,4 @@
-function Kartu({ item }) {
+function Kartu({ item, onHapus}) {
 
 
 
@@ -13,25 +13,10 @@ function Kartu({ item }) {
       <p className="text-sm text-gray-500">{item.kasus}</p>
       <p className="mt-2 font-bold text-green-800">Rp{item.harga.toLocaleString("id-ID")} /ton</p>
       {label}
+      <button onClick={onHapus} className="mt-3 px-3 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700">Hapus</button>
     </article>
   );
 }
-/* sebenarnya artikel cukup
-
-    <article>
-      <h3>{item.nama}</h3>
-      <p>{item.kasus}</p>
-      <p>{item.harga}</p>
-      <p>
-        {item.diperlukan
-          ? "Diperlukan"
-          : "Tidak Diperlukan"}
-      </p>
-    </article>
-
-    tetepi karena berantakan saya mintak ai untuk merapikan
-    */
-
 
 
 export default Kartu;
