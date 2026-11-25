@@ -1,0 +1,144 @@
+{
+  "Barang": [
+    {
+      "id": 1,
+      "nama": "Gula Pasir",
+      "kasus": "Impor",
+      "harga": 13500000,
+      "diperlukan": true
+    },
+    {
+      "id": 2,
+      "nama": "Minyak Sawit",
+      "kasus": "Ekspor",
+      "harga": 14500000,
+      "diperlukan": true
+    },
+    {
+      "id": 3,
+      "nama": "Bahan Mentah Tekstil",
+      "kasus": "Impor",
+      "harga": 28600000,
+      "diperlukan": true
+    },
+    {
+      "id": 4,
+      "nama": "Susu",
+      "kasus": "Impor",
+      "harga": 92000000,
+      "diperlukan": false
+    },
+    {
+      "id": 5,
+      "nama": "Karet",
+      "kasus": "Ekspor",
+      "harga": 42000000,
+      "diperlukan": true
+    },
+    {
+      "id": 6,
+      "nama": "Buah-Buahan",
+      "kasus": "Impor",
+      "harga": 30000000,
+      "diperlukan": false
+    },
+    {
+      "id": 7,
+      "nama": "Sayur Mayur",
+      "kasus": "Ekspor",
+      "harga": 25000000,
+      "diperlukan": true
+    },
+    {
+      "id": 8,
+      "nama": "Beras",
+      "kasus": "Impor",
+      "harga": 9500000,
+      "diperlukan": true
+    },
+    {
+      "id": 9,
+      "nama": "Kopi",
+      "kasus": "Ekspor",
+      "harga": 75000000,
+      "diperlukan": true
+    },
+    {
+      "id": 10,
+      "nama": "Batu Bara",
+      "kasus": "Ekspor",
+      "harga": 2100000,
+      "diperlukan": true
+    },
+    {
+      "id": 11,
+      "nama": "Kedelai",
+      "kasus": "Impor",
+      "harga": 7200000,
+      "diperlukan": true
+    },
+    {
+      "id": 12,
+      "nama": "Kakao",
+      "kasus": "Ekspor",
+      "harga": 120000000,
+      "diperlukan": false
+    },
+    {
+      "id": 13,
+      "nama": "Bawang Putih",
+      "kasus": "Impor",
+      "harga": 22000000,
+      "diperlukan": true
+    },
+    {
+      "id": 14,
+      "nama": "Udang dan Ikan",
+      "kasus": "Ekspor",
+      "harga": 115000000,
+      "diperlukan": true
+    },
+    {
+      "id": 15,
+      "nama": "Komponen Elektronik",
+      "kasus": "Impor",
+      "harga": 250000000,
+      "diperlukan": false
+    },
+    {
+      "id": 16,
+      "nama": "Rempah-Rempah",
+      "kasus": "Ekspor",
+      "harga": 90000000,
+      "diperlukan": true
+    },
+    {
+      "id": 17,
+      "nama": "Gandum",
+      "kasus": "Impor",
+      "harga": 4200000,
+      "diperlukan": true
+    },
+    {
+      "id": 18,
+      "nama": "Alas Kaki",
+      "kasus": "Ekspor",
+      "harga": 180000000,
+      "diperlukan": false
+    },
+    {
+      "id": 19,
+      "nama": "Pupuk",
+      "kasus": "Impor",
+      "harga": 5500000,
+      "diperlukan": true
+    },
+    {
+      "id": 20,
+      "nama": "Bijih Nikel",
+      "kasus": "Ekspor",
+      "harga": 850000,
+      "diperlukan": true
+    }
+  ]
+}

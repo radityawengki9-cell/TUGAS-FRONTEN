@@ -2,6 +2,11 @@ import Navbar from "./component/navbar";
 import Kartu from "./component/kartu";
 import TombolFilter from "./component/tombolfilter";
 import { useState, useEffect } from "react";
+import FormTambah from "./component/fromtambah";
+
+
+// alamat API ditulis sekali agar mudah diubah jika server berpindah
+const ALAMAT_API = "http://localhost:3001/Barang";
 
 
 function App() {
@@ -12,12 +17,15 @@ function App() {
     const [daftarItem, setDaftarItem] = useState([]);
     const [status, setStatus] = useState("memuat");
 
+    // alamat API ditulis sekali agar mudah diubah jika server berpindah
+    
+
 
 
         useEffect(() => {
       async function ambilData() {
         try {
-          const response = await fetch("/Ekspor-Impor.json");
+          const response = await fetch(ALAMAT_API);
 
           if (!response.ok) {
             throw new Error("Gagal mengambil data");
@@ -43,7 +51,67 @@ function App() {
 
     // data hasil JSON disimpan ke state agar React melakukan render ulang
 
+    async function tambahItem(itemBaru) {
+  try {
+    const response = await fetch(ALAMAT_API, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(itemBaru),
+    });
 
+    if (!response.ok) {
+      throw new Error("Gagal menambah data");
+    }
+
+    const itemTersimpan = await response.json();
+
+    // array baru digunakan agar React mendeteksi perubahan state
+    setDaftarItem([
+      ...daftarItem,
+      itemTersimpan,
+    ]);
+
+    return true;
+  } catch (error) {
+    alert("Gagal menambah data");
+    return false;
+  }
+}
+
+
+    async function hapusItem(item) {
+  const setuju = confirm(
+    `Hapus ${item.nama}?` 
+  );
+
+  // confirm dipakai agar data tidak terhapus karena salah klik
+  if (!setuju) {
+    return;
+  }
+
+  try {
+    const response = await fetch(
+      `${ALAMAT_API}/${item.id}`,
+      {
+        method: "DELETE",
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Gagal menghapus");
+    }
+
+    setDaftarItem(
+      daftarItem.filter(
+        (data) => data.id !== item.id
+      )
+    );
+  } catch (error) {
+    alert("Gagal menghapus data");
+  }
+}
 
 
     // filter dihitung di sini agar JSX di bagian return tetap mudah dibaca
@@ -98,6 +166,7 @@ else {
           <Kartu
             key={item.id}
             item={item}
+            onHapus={() => hapusItem(item)}
           />
         ))
       }
@@ -121,6 +190,16 @@ return (
       <main className="max-w-5xl mx-auto px-6 py-10">
          <section id="menu">
           <h2 className="text-2xl font-bold mb-4">Barang kami</h2>
+
+          <div className="mb-8 p-4 bg-white rounded-lg border border-gray-5 00">
+          <h3 className="font-semibold text-lg mb-3">
+            Edit Barang 
+          </h3>
+
+          <FormTambah onTambah={tambahItem}/>
+          </div>
+
+          
           <input
           type="text"
           value={katakunci}
